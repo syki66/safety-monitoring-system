@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안전 모니터링 시스템</title>
+    <style>
+        body{
+
+        }
+
+        .header{
+
+        }
+        .container{
+            background-color: #39404A;
+            width: 1600px;
+            height: 900px;
+
+            display: grid;
+            grid-template-columns: 200px 200px 1fr;
+            grid-template-rows: 100px 30px 150px 150px 1fr;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        .header{
+            background-color: bisque;
+            grid-column: span 3;
+        }
+        .clock{
+            background-color: blueviolet;
+            grid-column: span 3;
+        }
+        .main_1{
+            background-color: coral;
+            grid-column: span 2;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            /* grid-template-rows: 1fr 1fr 1fr; */
+        }
+        .main_2{
+            background-color: cyan;
+            grid-row: span 3;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px 100px 100px 100px 100px;
+
+            grid-gap: 10px;
+        }
+        .main_2 > div{
+            background-color: #636975;
+            color: #FFFFFF;
+        }
+        .main_3, .main_4{
+            background-color: darkgreen;
+
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+        .main_5{
+            background-color: darkseagreen;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            안전 모니터링 시스템
+        </div>
+        <div class="clock">
+            현재시각: 04:43:41 PM
+        </div>
+        <div class="main_1">
+            <div style="grid-column: span 4;">변위량</div>
+            <div>전체</div>
+            <div>정상</div>
+            <div>주의</div>
+            <div>경고</div>
+            <div>50</div>
+            <div>18</div>
+            <div>25</div>
+            <div>7</div>
+        </div>
+        <div class="main_2">
+            
+        </div>
+        <div class="main_3">
+            <div>진동 및 지진</div>
+            <div>미감지</div>
+        </div>
+        <div class="main_4">
+            <div>도난/침입/화재</div>
+            <div>미발생</div>
+        </div>
+        <div class="main_5">모니터링 대상 선택</div>
+    </div>
+    <script>
+        const myParent = document.querySelector('.main_2');
+        for (let i=0; i<34; i++){
+            let myDiv = document.createElement("div");
+            myDiv.setAttribute('onclick', 'openDialogBox()');
+            myParent.appendChild(myDiv);
+        }
+
+        function openDialogBox(){
+            if (confirm("센서에 대한 데이터를 조회하시겠습니까?")){
+                window.open("./popup.html", "popup", "width=1500, height=520");
+            }
+        }
+
+    </script>
+</body>
+</html>
