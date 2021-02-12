@@ -6,16 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>안전 모니터링 시스템</title>
     <style>
-        body{
-
-        }
-
-        .header{
-
-        }
         .container{
-            background-color: #39404A;
-            width: 1600px;
+            background-color: black;
+            width: 1700px;
             height: 900px;
 
             display: grid;
@@ -25,20 +18,39 @@
             padding: 10px;
         }
         .header{
-            background-color: bisque;
+            background-color: #1E2328;
             grid-column: span 3;
+            font-size: 30px;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            padding: 25px;
         }
         .clock{
-            background-color: blueviolet;
+            color: white;
             grid-column: span 3;
+            padding: 5px 10px;
+            text-align: right;
         }
         .main_1{
-            background-color: coral;
+            background-color: #39404A;
             grid-column: span 2;
 
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            /* grid-template-rows: 1fr 1fr 1fr; */
+        }
+        .main_1 > div:nth-child(n){
+            color: #A3B0C6;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+            padding-top: 10px;
+        }
+        .main_1 > div:nth-child(1){
+             grid-column: span 4;
+             text-align: left;
+             background-color: #505966;
+             padding-left: 10px;
         }
         .main_2{
             background-color: cyan;
@@ -54,15 +66,30 @@
             background-color: #636975;
             color: #FFFFFF;
         }
-        .main_3, .main_4{
-            background-color: darkgreen;
-
+        .main_3, .main_4, .main_5{
+            background-color: #39404A;
+            font-size: 20px;
+            font-weight: 900;
             display: grid;
             grid-template-rows: 1fr 1fr 1fr 1fr;
         }
+        .main_3 > div:nth-child(1), .main_4 > div:nth-child(1), .main_5 > div:nth-child(1){
+            padding: 10px;
+            color: #A3B0C6;
+            background-color: #505966;
+        }
+        .main_3 > div:nth-child(2), .main_4 > div:nth-child(2){
+            color: #03A6F3;
+            text-align: center;
+            padding: 10px;
+            font-size: 30px;
+        }
         .main_5{
-            background-color: darkseagreen;
+            background-color: #39404A;
             grid-column: span 2;
+
+            display: grid;
+            grid-template-rows: 1fr 7fr;
         }
     </style>
 </head>
@@ -76,15 +103,15 @@
             현재시각: 04:43:41 PM
         </div>
         <div class="main_1">
-            <div style="grid-column: span 4;">변위량</div>
-            <div>전체</div>
+            <div>변위량</div>
+            <div style="">전체</div>
             <div>정상</div>
             <div>주의</div>
             <div>경고</div>
-            <div>50</div>
-            <div>18</div>
-            <div>25</div>
-            <div>7</div>
+            <div style="color:#03A6F3; font-size: 30px;">50</div>
+            <div style="color:#9ADE06; font-size: 30px;">18</div>
+            <div style="color:#F29848; font-size: 30px;">25</div>
+            <div style="color:#FF2020; font-size: 30px;">7</div>
         </div>
         <div class="main_2">
             
@@ -97,7 +124,10 @@
             <div>도난/침입/화재</div>
             <div>미발생</div>
         </div>
-        <div class="main_5">모니터링 대상 선택</div>
+        <div class="main_5">
+            <div>모니터링 대상 선택</div>
+            <div></div>
+        </div>
     </div>
     <script>
         const myParent = document.querySelector('.main_2');
@@ -109,10 +139,9 @@
 
         function openDialogBox(){
             if (confirm("센서에 대한 데이터를 조회하시겠습니까?")){
-                window.open("./popup.html", "popup", "width=1500, height=520");
+                window.open("./popup.html", "popup", "width=1700, height=520");
             }
         }
-
     </script>
 </body>
 </html>
