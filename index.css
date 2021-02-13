@@ -43,7 +43,7 @@
      padding-left: 10px;
 }
 .main_2{
-    background-color: cyan;
+    background-color: #39404A;
     grid-row: span 3;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
