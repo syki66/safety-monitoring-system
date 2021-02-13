@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+}
+.container{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    height: 500px;
+    grid-gap: 5px;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    overflow-y: scroll;
+    text-align: center;
+    grid-gap: 1px;
+    background-color: gray;
+}
+.list > div, .log > div, .stat > div{
+    background-color: white;
+    padding: 10px 0px;
+}
+.side{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-rows: 2fr 1fr;
+}
+h3, h4{
+    margin-bottom: 0px;
+}
+h4{
+    background-color: #B6B6B6;
+}
+.stat, .log{
+    display: grid;
+    background-color: gray;
+    text-align: center;
+    grid-gap: 1px;
+}
+.stat{
+    grid-template-columns: repeat(6, 1fr);
+}
+.log{
+    grid-template-columns: repeat(4, 1fr);
+}
